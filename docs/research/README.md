@@ -17,9 +17,9 @@ GPU レンダラーは最初から作らない。手順は次のとおり。
 
 MORT は先行研究調査の結果、新規性の余地が狭いと判断した（[`mort/survey.md`](mort/survey.md)）。そのため研究の主軸から外し、**機能化トラック**へ移す（2026-11-06）。ArcheRender で作り込んだうえで Verion へ移植する。
 
-主軸の研究テーマは **DELTA** とし、主題を「多フレームにわたる差分推定の誤差の蓄積と、不確かさに基づくフル再計算との切替・結合」に絞る（2026-11-06、[`delta/protocol.md`](delta/protocol.md)）。DELTA の各要素は単独では既知だが、この点は RPI と Günther 2015 が未解決のまま残している（[`delta/survey.md`](delta/survey.md)）。
+主軸の研究テーマは **A: 段差のある Toon 関数の閾値判定サンプリング**とする（2026-11-06、[`toon/survey.md`](toon/survey.md)）。新規性のゲートは通過したが、統計手法としての中核は既存である。そのため主張の柱は、隣接画素とフレーム間の相関、時間方向の安定性に置く。
 
-新テーマ探索で見つけた **A: 段差のある Toon 関数の閾値判定サンプリング**は、新規性のゲートを通過したが、第二候補として保留する（[`toon/survey.md`](toon/survey.md)）。ALTO も保留する。
+DELTA も新規性の確認で、結合法の中核が既出とわかった（Nicolet 2023、ReSTCV 2026。[`delta/protocol.md`](delta/protocol.md) §6）。MORT と同じく**機能化トラック**へ移し、Verion のアニメーション連番の高速化として作り込む。ALTO は保留する。
 
 | ID | 要件 |
 |---|---|
@@ -84,8 +84,9 @@ docs/research/
   mort/protocol.md     MORT の研究プロトコル（事前登録）
   mort/survey.md       MORT の先行研究調査と新規性マトリクス
   delta/survey.md      DELTA の先行研究調査
-  delta/protocol.md    DELTA の研究プロトコル（事前登録）
-  toon/survey.md       新テーマ探索とテーマ A の先行研究（第二候補として保留）
+  delta/protocol.md    DELTA のプロトコル（機能化トラック）
+  toon/survey.md       新テーマ探索と主軸テーマ A の先行研究
+  toon/protocol.md     テーマ A の研究プロトコル（未作成）
 ```
 
 ## 6. 採用しなかったもの
